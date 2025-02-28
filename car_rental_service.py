@@ -32,3 +32,15 @@ class Car(RentalVehicle):
         # super().display_vehicle_info()
         print(f"Car: {self.brand} {self.model}, Year :{self.year}"
               f" , Seats: {self.seats}, Rental price: ${self.get_rental_price_per_day()}/day")
+        
+       
+class Bike(RentalVehicle):
+    def __init__(self,brand,model,year,rental_price_per_day,engine_capacity):
+        super().__init__(brand,model,year,rental_price_per_day)
+        self.engine_capacity = engine_capacity
+    def display_cost(self,days):
+        total_cost = self.calculate_rental_cost(days)
+        print(f"Rental cost for {self.brand} {self.model} for {days} days is ${total_cost}")
+    def display_vehicle_info(self):
+        print(f"Bike: {self.brand} {self.model}, Year :{self.year}"
+              f" , Engine: {self.engine_capacity}, Rental price: ${self.get_rental_price_per_day()}/day")
