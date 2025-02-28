@@ -22,4 +22,8 @@ class RentalVehicle():
 class Car(RentalVehicle):
     def __init__(self,brand,model,year,rental_price_per_day,seats):
         super().__init__(brand,model,year,rental_price_per_day)
-        self.seats = seats
+        self.seats = 
+
+    def display_cost(self,days):
+        total_cost = self.calculate_rental_cost(days)
+        print(f"Rental cost for {self.brand} {self.model} for {days} days is ${total_cost}")
