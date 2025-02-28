@@ -44,3 +44,13 @@ class Bike(RentalVehicle):
     def display_vehicle_info(self):
         print(f"Bike: {self.brand} {self.model}, Year :{self.year}"
               f" , Engine: {self.engine_capacity}, Rental price: ${self.get_rental_price_per_day()}/day")
+        
+        #show polymorphism
+def show_vehicle_info(vehicle):
+    vehicle.display_vehicle_info()
+
+
+car=Car("Toyota","Corolla",2020,50,3)
+bike=Bike("Yamaha ","R1", 2019,30,"998cc")
+show_vehicle_info(car)
+show_vehicle_info(bike)
